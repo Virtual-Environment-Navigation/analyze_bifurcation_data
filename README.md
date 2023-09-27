@@ -5,6 +5,6 @@
 # Setup
 
 1. Clone this repository to your computer.
-2. Install Python 3.11
-3. Install the required packages using the following command in the terminal: `pip install -r requirements.txt`
-4. Run the command: `pip install -U scikit-learn` <- why? Because scikit learn is weird.
+2. Make sure you have Python 3.10 installed on your computer
+3. Create a Conda Environment
+4. Install the required packages using the following command in the terminal: `pip install -r requirements.txt`
