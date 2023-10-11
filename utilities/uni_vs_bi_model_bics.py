@@ -4,7 +4,7 @@ from utilities.model_fitting import model_fitting
 from utilities.debug.plot_models import plot_models
 
 
-def uni_vs_bi_model_bics(data: list, mean: float, std_dev: float, alpha: float):
+def uni_vs_bi_model_bics(data: list, mean, std_dev, alpha):
     [x_data, y_data, params_uni, params_bi] = model_fitting(data, mean, std_dev, alpha)
 
     unimodal_model = unimodal(x_data, 0, std_dev, *params_uni)
