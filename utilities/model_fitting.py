@@ -10,12 +10,9 @@ def model_fitting(data: list, std_dev, alpha):
     x_data = np.linspace(min(data), max(data), num=len(data))
     y_data = np.array(data)
 
-    # BEGIN: histogram
     n, bins, _ = plt.hist(y_data, bins=HIST_BIN_NUMBER, density=True)
     y_hist = (bins[:-1] + bins[1:]) / 2
 
-    plt.plot(y_hist, n, 'r')
-    plt.show()
 
     params_uni, _ = curve_fit(lambda x, amplitude: 
                               unimodal(x, UNIMODAL_MEAN, std_dev, amplitude), 
