@@ -1,4 +1,4 @@
-from config.config import SUBGROUP_BINARY_DATA
+from config.config import SUBGROUP_BINARY_DATA_WITH_HEADING
 from utilities.logistic_regression import perform_logistic_regression
 import pandas as pd
 import seaborn as sns
@@ -26,13 +26,13 @@ def plot_logistic_regression(df, x_col, y_col):
 def main():
     print("Calculating the Psychometric Function(s)")
 
-    df = pd.read_csv(SUBGROUP_BINARY_DATA)
+    df = pd.read_csv(SUBGROUP_BINARY_DATA_WITH_HEADING)
 
     df['Alpha'] = df['Alpha'].replace(12, 120) # replace values of 12 with 120!! 12 isn't an alpha level
 
-    logistic_regression_model = perform_logistic_regression(df, 'Alpha', 'Followed_Subgroup')
+    logistic_regression_model = perform_logistic_regression(df, 'Alpha', 'Followed_Subgroup_Heading')
 
-    plot_logistic_regression(df, 'Alpha', 'Followed_Subgroup')
+    plot_logistic_regression(df, 'Alpha', 'Followed_Subgroup_Heading')
 
     # plot_logistic_regression_by_subject(df, 'Alpha', 'Followed_Subgroup')
 
